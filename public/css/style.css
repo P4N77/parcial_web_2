@@ -1,0 +1,288 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Cuerpo */
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image:url("https://cdn.pixabay.com/photo/2013/01/05/21/15/oil-painting-74060_1280.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+  }
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.7); /* Blanco semitransparente */
+    z-index: -1; /* Mantiene el contenido principal encima */
+  }
+  
+  /* Encabezado */
+  header {
+    padding: 20px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    border-bottom: solid gray 1px;
+  }
+  
+  nav {
+    font-family: 'Georgia', serif;
+    display: flex;
+    justify-content: space-evenly; /* centra horizontalmente */
+  }
+  
+  nav ul {
+    display: flex;
+    gap: 60px; /* aumenta el espacio entre las opciones */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: #222;
+    font-weight: bold;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+  }
+  
+  nav a:hover {
+    color: #aa0000;
+  }
+  
+  /* Main */
+  main {
+    /* padding: 30px 20px; */
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  
+  /* Galería */
+  ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    list-style: none;
+    margin-top: 20px;
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+  
+  li {
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    padding: 10px 10px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    aspect-ratio: 3/4;
+  }
+  
+  li:hover {
+    transform: rotate(-1deg) scale(1.03);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  li img {
+    width: 100%;
+    height: 200px; /* Altura fija */
+    object-fit: cover; /* Recorta proporcionalmente */
+  }
+  
+  li h3 {
+    margin-top: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    color: #333;
+  }
+  
+  li p {
+    font-size: 0.85rem;
+    color: #666;
+    text-align: center;
+  }
+  /* Obra individual */
+  img[src*="obra"] {
+    display: block;
+    margin: 20px auto;
+    max-width: 90%;
+    /* border-radius: 8px; */
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+  }
+  
+  p {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+  }
+  
+  /* Títulos */
+  h2 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: #111;
+  }
+  
+  /* Pie de página */
+  footer {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+
+  /* Footer */
+footer {
+    background: #111;
+    color: #bbb;
+    padding: 15px 0;
+    text-align: center;
+    font-size: 0.9rem;
+    margin-top: 40px;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.2);
+  }
+  
+  /* Animación suave de entrada */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1s ease-out forwards;
+  }
+  
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .hero {
+    text-align: center;
+    /* background: linear-gradient(to bottom right, #f2f2f2, #e0e0e0); */
+    border-radius: 20px;
+    /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); */
+    max-width: 800px;
+    margin: 50px auto;
+  }
+  
+  .hero h1,
+  .hero h2 {
+    font-size: 4rem; /* o ajusta según lo que desees */
+    margin-bottom: 20px;
+    color: #222;
+    font-family: 'Georgia', serif; /* aplica la misma fuente */
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Georgia', serif;
+  }
+  
+  .hero p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 30px;
+  }
+  
+  .hero .btn {
+    background-color: #000;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  
+  .hero .btn:hover {
+    background-color: #333;
+  }
+
+  .obra-detalle {
+    position: relative;
+    width: 100%;
+    height: 90vh;
+    overflow: hidden;
+  }
+  
+  .imagen-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+  
+  .imagen-container img {
+    width: 100%;
+    height: 95%;
+    object-fit: cover;
+    display: block;
+    filter: brightness(0.7); /* oscurece un poco para mejorar contraste del texto */
+  }
+  
+  .info-superpuesta {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    max-width: 300px;
+    transform: rotate(5deg); /* Le da un giro sutil para el efecto de post-it */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Sombra para hacer el efecto más realista */
+    z-index: 10; /* Asegura que esté encima de la imagen */
+  }
+  
+  .info-superpuesta h2 {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+    color: #222;
+    font-family: 'Georgia', serif;
+  }
+  
+  .info-superpuesta h3 {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 8px;
+  }
+  
+  .info-superpuesta p {
+    font-size: 1rem;
+    color: #444;
+  }
+
+  .volver-galeria {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background-color: #ffcc00; /* Color llamativo para que se destaque */
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 250px;
+    transform: rotate(-5deg); /* Ligeramente girado, pero en dirección opuesta */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    z-index: 10;
+  }
+  
+  .volver-galeria a {
+    font-size: 1.2rem;
+    color: #333;
+    font-weight: bold;
+    text-decoration: none;
+  }

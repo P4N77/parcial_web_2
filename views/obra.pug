@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  .obra-detalle
+    .imagen-container
+      img(src=obra.imagen, alt=obra.titulo)
+      .info-superpuesta
+        h2= obra.titulo
+        h3= obra.autor
+        p Año: #{obra.año}
+        p= obra.descripcion
+    .volver-galeria
+      a(href='/galeria') Volver a la Galería
